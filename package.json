@@ -1,0 +1,32 @@
+{
+  "name": "harogcg",
+  "version": "1.0.0",
+  "description": "A discord BOT client to play the Gundam TCG and manage decks",
+  "keywords": [
+    "Gundam",
+    "Card",
+    "Game",
+    "GCG",
+    "TCG",
+    "Haro"
+  ],
+  "homepage": "https://github.com/Talrem/HaroGCG#readme",
+  "bugs": {
+    "url": "https://github.com/Talrem/HaroGCG/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talrem/HaroGCG.git"
+  },
+  "license": "ISC",
+  "author": "Talrem",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "help.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.21.0",
+    "strings.js": "^1.4.2"
+  }
+}
