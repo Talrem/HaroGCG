@@ -1,0 +1,7 @@
+{
+"ST01-001":{"Name":"Gundam RX-78-2","Color":"blue","Type":"Unit","LV":4,"Cost":3,"Affiliation":["Earth Federation","White Base Team"],"Effect":"<Repair 2>. During Pair During your turn, all your Units get AP+1.","Link Requirement":"Amuro Ray","AP":3,"HP":4},
+"ST01-010":{"Name":"Amuro Ray","Color":"blue","Type":"Pilot","LV":4,"Cost":1,"Affiliation":["Earth Federation","White Base Team","Newtype"],"Effect":"【Burst】 Add this card to your hand.","Pilot Name":"Amuro Ray","PilotAP":2,"PilotHP":1,"PilotEffect":"【When Paired】 Choose 1 enemy Unit with 5 or less HP. Rest it."},
+"ST01-012":{"Name":"Thoroughly Damaged","Color":"blue","Type":"Command-Pilot","LV":2,"Cost":1,"Affiliation":["Earth Federation","White Base Team"],"Effect":"【Main】 Choose 1 rested Unit. Deal 1 damage to it.","Pilot Name":"Amuro Ray","PilotAP":1,"PilotHP":0,"PilotEffect":""},
+"ST01-014":{"Name":"Unforeseen Incident","Color":"white","Type":"Command","LV":3,"Cost":1,"Effect":"【Burst】 Activate this card's Main.【Main】 /【Action】 Choose 1 Enemy Unit. It gets AP-3 during this turn."},
+"ST01-015":{"Name":"White Base","Color":"white","Type":"Command","LV":3,"Cost":2,"Effect":"【Burst】 Deploy this card. 【Deploy】 Add 1 of your Shields to your hand. Activate 【Main】 Once per turn 2 Deploy 1 <Gundam>((White Base Team)-AP3-HP3) Unit token if you have no Units in play, deploy 1 <Guncannon>((White Base Team)-AP3-HP3) Unit token if you have only 1 Unit in play, or deploy 1 <Guntank>((White Base Team)-AP1-HP1) Unit token if you have 2 or more Units in play.","BaseHP":5}
+}
