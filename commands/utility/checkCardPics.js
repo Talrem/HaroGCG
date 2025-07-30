@@ -7,8 +7,6 @@ module.exports = {
 		.setName('check-card-pics')
 		.setDescription('Tells which cards are missing from the image database.'),
 	async execute(interaction) {
-		// interaction.user is the object representing the User who ran the command
-		// interaction.member is the GuildMember object, which represents the user in the specific guild
 		let textToSend = "";
 		let path = "";
 		var missingPic = new Array();
