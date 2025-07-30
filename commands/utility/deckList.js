@@ -32,10 +32,11 @@ module.exports = {
 		if(decks[deckId].colors.length>1){
 			toSend += ", " + decks[deckId].colors[1];
 		}
-		toSend += "\n";
+		toSend += "\n```";
 		for(i = 0; i < decks[deckId].cardlist.length; i++){
-			toSend+= + decks[deckId].amount[i] + " " + decks[deckId].cardlist[i] + " - " + cards[decks[deckId].cardlist[i]].name+ "\n";
+			toSend+= + decks[deckId].amount[i] + " " + decks[deckId].cardlist[i] + " - " + cards[decks[deckId].cardlist[i]].Name+ "\n";
 		}
+		toSend +="```";
 		return interaction.reply(toSend);
 	},
 };
