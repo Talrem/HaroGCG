@@ -12,9 +12,9 @@ module.exports = {
 	async execute(interaction) {
 		try{
 			const err = await interaction.reply({
-			content:"",
-			files: ["./img/"+interaction.options.getString('card-number').toUpperCase()+".webp"] 
-		});
+				content:"",
+				files: ["./img/"+interaction.options.getString('card-number').toUpperCase()+".webp"] 
+			});
 		} catch(err){
 			interaction.reply("Couldn't find the card.");
 		}
