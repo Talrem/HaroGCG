@@ -5,17 +5,18 @@ module.exports = {
 		.setName('card')
 		.setDescription('Send the picture of a card.')
 		.addStringOption(option =>
-		option.setName('card-number')
+			option.setName('card-number')
 				.setDescription('The card you want a picture of')
 				.setRequired(true),
 		),
 	async execute(interaction) {
-		try{
+		try {
 			const err = await interaction.reply({
-				content:"",
-				files: ["./img/"+interaction.options.getString('card-number').toUpperCase()+".webp"] 
+				content: "",
+				files: ["./img/" + interaction.options.getString('card-number').toUpperCase() + ".webp"],
+				ephemeral: true
 			});
-		} catch(err){
+		} catch (err) {
 			interaction.reply("Couldn't find the card.");
 		}
 	},
