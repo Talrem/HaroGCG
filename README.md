@@ -15,9 +15,11 @@
     </ul>
     <p>Planned features</p>
     <ul>
+      <li>More card rarities in booters, such as Full Arts, Foils and such</li>
       <li>Duel opponents</li>
+      <li>Adding future booster packs and Starter Decks</li>
     </ul>
     <p>Note that you need to replace the content of your GitIgnore with your own files.</p>
-    <p color="#FF0000">Disclaimer: I am not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Bandai Card Games, or any of its subsidiaries or its affiliates.</p>
+    <p>Disclaimer: I am not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Bandai Card Games, or any of its subsidiaries or its affiliates. You can find the official site for the Gundam TCG here : <a href="https://www.gundam-gcg.com">https://www.gundam-gcg.com</a></p>
   </body>
 </html>

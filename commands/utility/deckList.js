@@ -15,6 +15,7 @@ module.exports = {
 	async execute(interaction) {
 		let toSend = "";
 		let deckId = -2;
+		let j = 0;
 		let maxNbDeck = decks[-1].deckCount;
 		if ((parseFloat(interaction.options.getString('deck')) == parseInt(interaction.options.getString('deck'))) && !isNaN(interaction.options.getString('deck'))) {
 			deckId = interaction.options.getString('deck');
@@ -28,13 +29,19 @@ module.exports = {
 		if (deckId == -2) {
 			return interaction.reply("Couldn't find the deck you asked for.");
 		}
+		let cardNames = [decks[deckId].cardlist.length];
 		toSend += "Name: " + decks[deckId].name + "\nColors: " + decks[deckId].colors[0];
 		if (decks[deckId].colors.length > 1) {
 			toSend += ", " + decks[deckId].colors[1];
 		}
 		toSend += "\n```";
+		for (i = 0; i < cards[-1].amount; i++) {
+			if (cards[i].ID == decks[deckId].cardlist[j]) {
+				cardNames[j++] = cards[i].Name;
+			}
+		}
 		for (i = 0; i < decks[deckId].cardlist.length; i++) {
-			toSend += + decks[deckId].amount[i] + " " + decks[deckId].cardlist[i] + " - " + cards[decks[deckId].cardlist[i]].Name + "\n";
+			toSend += + decks[deckId].amount[i] + " " + decks[deckId].cardlist[i] + " - " + cardNames[i] + "\n";
 		}
 		toSend += "```";
 		return interaction.reply(toSend);
