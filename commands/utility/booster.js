@@ -4,6 +4,14 @@ const { AttachmentBuilder } = require('discord.js');
 const fs = require("fs");
 const collectionFile = require("../../jsons/collection.json");
 const cards = require("../../jsons/cards.json");
+const timer = require("../../jsons/boosterTimer.json");
+const delay = 3600000;
+
+function millisToMinutesAndSeconds(millis) {
+	var minutes = Math.floor(millis / 60000);
+	var seconds = ((millis % 60000) / 1000).toFixed(0);
+	return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -24,6 +32,18 @@ module.exports = {
 		let channel = interaction.channel;
 		let ownedCard = new Array();
 		let ownedAmount = new Array();
+		let boosterTiming;
+		let remainingTime = 0;
+		let now = Date.now();
+		try {
+			boosterTiming = timer[userID].time;
+		} catch {
+			boosterTiming = now;
+		}
+		if (now != boosterTiming && now - delay < boosterTiming) {
+			remainingTime = (boosterTiming + delay - now);
+			return interaction.reply({ content: "You can open a new booster in " + millisToMinutesAndSeconds(remainingTime), ephemeral: true });
+		}
 		try {
 			ownedCard = collectionFile[userID].cards;
 			ownedAmount = collectionFile[userID].cardAmount;
@@ -79,7 +99,13 @@ module.exports = {
 			content: "",
 			files: ["./img/" + cardPulled[j++] + ".webp", "./img/" + cardPulled[j++] + ".webp", "./img/" + cardPulled[j++] + ".webp", "./img/" + cardPulled[j++] + ".webp", "./img/" + cardPulled[j++] + ".webp", "./img/" + cardPulled[j++] + ".webp"]
 		})
-		channel.send("The cards have been added to your collection.");
-		return;
+
+		timer[userID] = {
+			time: Date.now(),
+		};
+		fs.writeFile("./jsons/boosterTimer.json", JSON.stringify(timer), (err) => {
+			if (err) console.log(err);
+		})
+		return interaction.reply("The cards have been added to your collection.");
 	},
 };
