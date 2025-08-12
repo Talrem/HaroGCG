@@ -4,8 +4,8 @@ const cardFile = require("../../jsons/cards.json");
 const { Collection } = require('discord.js');
 
 function getAllCards(cardsToReturn){
-	for(i = 0; i < cards[-1].amount; i++){
-		cardsToReturn.push(cards[i].ID);
+	for(i = 0; i < cardFile[-1].amount; i++){
+		cardsToReturn.push(cardFile[i].ID);
 	}
 	return cardsToReturn
 }
@@ -26,14 +26,14 @@ module.exports = {
 		let keepOn = true;
 		let cardIdentifier = null;
 		let channel = interaction.channel;
-		let arg = interaction.options.getString('booster-number')
+		let arg = interaction.options.getString('type');
 		if (arg != null) {
 			cardIdentifier = arg.toString();
 		}
 		if(cardIdentifier != null){
-			for(i = 0; i < cards[-1].amount; i++){
-				if(cards[i].ID.includes(cardIdentifier)){
-					cardsToDisplay.push(cards[i].ID);
+			for(i = 0; i < cardFile[-1].amount; i++){
+				if(cardFile[i].ID.includes(cardIdentifier)){
+					cardsToDisplay.push(cardFile[i].ID);
 				}
 			}
 		}else{
