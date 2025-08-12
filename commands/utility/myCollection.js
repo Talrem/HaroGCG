@@ -71,7 +71,7 @@ module.exports = {
 					}
 					reaction.users.remove(userID);
 				})
-				.catch(error => console.log(error));
+				.catch(error =>console.log(error));
 		}
 	},
 };
