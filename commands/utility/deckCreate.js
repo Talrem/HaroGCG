@@ -76,16 +76,16 @@ module.exports = {
 					case '✅':
 						keepOn = false;
 						if (step == 2) {
-							let deckNumber = deckFile[-1].amount;
+							let deckNumber = deckFile[-1].deckCount;
 							deckFile[deckNumber] = {
 								user: userID,
 								name: deckName,
 								cardlist: cardsToAdd,
 								amount: amountToAdd,
-								color: colorsToAdd
+								colors: colorsToAdd
 							};
 							deckFile[-1] = {
-								amount: deckFile[-1].amount + 1
+								amount: deckNumber + 1
 							};
 							fs.writeFile("./jsons/decks.json", JSON.stringify(deckFile), (err) => {
 								if (err) console.log(err);
