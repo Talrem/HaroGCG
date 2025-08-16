@@ -37,7 +37,6 @@ module.exports = {
 				if (decks[i].name.toLowerCase() == interaction.options.getString('deck').toLowerCase()) {
 					deckId = i;
 				}
-				console.log()
 			}
 		}
 		if (deckId == -2) {
@@ -54,13 +53,9 @@ module.exports = {
 		}
 		toSend += "\n```";
 		for( i = 0 ; i < decks[deckId].cardlist.length; i ++){
-			console.log(decks[deckId].cardlist[i]);
-			console.log(allCardIds);
 			let index = allCardIds.indexOf(decks[deckId].cardlist[i]);
-			console.log(index);
 			cardNames[i] = allCardNames[index];
 		}
-		console.log(cardNames);
 		for (i = 0; i < decks[deckId].cardlist.length; i++) {
 			toSend += + decks[deckId].amount[i] + " " + decks[deckId].cardlist[i] + " - " + cardNames[i] + "\n";
 		}
