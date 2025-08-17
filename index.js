@@ -1,5 +1,5 @@
 // Require the necessary discord.js classes
-const { Client, Collection, Events, GatewayIntentBits, MessageFlags } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits, MessageFlags, ActivityType } = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
@@ -9,6 +9,11 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 // The distinction between `client: Client<boolean>` and `readyClient: Client<true>` is important for TypeScript developers.
 // It makes some properties non-nullable.
 client.once(Events.ClientReady, readyClient => {
+	client.user.setActivity({
+		type: ActivityType.Custom,
+		name: "customstatus",
+		state: "Fix Release!"
+	});
 	console.log(`Fix Release! Connecté en tant que ${readyClient.user.tag}`);
 });
 

@@ -4,14 +4,14 @@ const decks = require("../../jsons/decks.json");
 const cards = require("../../jsons/cards.json");
 
 function getAllCardIds(array, cardFile){
-	for(i = 0; i < cardFile[-1].amount; i++){
+	for(i = 0; i < cardFile["-1"].amount; i++){
 		array.push(cardFile[i].ID);
 	}
 	return array;
 }
 
 function getAllCardNames(array, cardFile){
-	for(i = 0; i < cardFile[-1].amount; i++){
+	for(i = 0; i < cardFile["-1"].amount; i++){
 		array.push(cardFile[i].Name);
 	}
 	return array;
@@ -29,7 +29,7 @@ module.exports = {
 	async execute(interaction) {
 		let toSend = "";
 		let deckId = -2;
-		let maxNbDeck = decks[-1].deckCount;
+		let maxNbDeck = decks["-1"].deckCount;
 		if ((parseFloat(interaction.options.getString('deck')) == parseInt(interaction.options.getString('deck'))) && !isNaN(interaction.options.getString('deck'))) {
 			deckId = interaction.options.getString('deck');
 		} else {
@@ -39,13 +39,13 @@ module.exports = {
 				}
 			}
 		}
-		if (deckId == -2) {
+		if (deckId == -2 || deckId >= decks["-1"].deckCount) {
 			return interaction.reply("Couldn't find the deck you asked for.");
 		}
 		let cardNames = [decks[deckId].cardlist.length];
-		let allCardNames = [cards[-1].amount];
+		let allCardNames = [cards["-1"].amount];
 		allCardNames = getAllCardNames(allCardNames, cards);
-		let allCardIds = [cards[-1].amount];
+		let allCardIds = [cards["-1"].amount];
 		allCardIds = getAllCardIds(allCardIds, cards);
 		toSend += "Name: " + decks[deckId].name + "\nColors: " + decks[deckId].colors[0];
 		if (decks[deckId].colors.length > 1) {
