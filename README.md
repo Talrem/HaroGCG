@@ -21,5 +21,6 @@
     </ul>
     <p>Note that you need to replace the content of your GitIgnore with your own files.</p>
     <p>Disclaimer: I am not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Bandai Card Games, or any of its subsidiaries or its affiliates. You can find the official site for the Gundam TCG here : <a href="https://www.gundam-gcg.com">https://www.gundam-gcg.com</a></p>
+    <p><a href="https://www.gundam-gcg.com/en/cards/index.php">CARDS | GUNDAM CARD GAME Official Website</a></p>
   </body>
 </html>
